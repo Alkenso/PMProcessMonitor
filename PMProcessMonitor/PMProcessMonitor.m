@@ -22,10 +22,6 @@
 @end
 
 
-const uid_t PMAllProcesses = UID_MAX;
-
-static const NSTimeInterval kDefaultRefreshFrequency = 5.0;
-
 @interface PMProcessMonitor ()
 
 @property (strong, readwrite, atomic) NSArray<PMProcess *> *processes;
@@ -42,7 +38,7 @@ static const NSTimeInterval kDefaultRefreshFrequency = 5.0;
     static PMProcessMonitor * s_defaultMonitor = nil;
     static dispatch_once_t s_onceToken;
     dispatch_once(&s_onceToken, ^{
-        s_defaultMonitor = [[PMProcessMonitor alloc] initWithRefreshFrequency: kDefaultRefreshFrequency];
+        s_defaultMonitor = [[PMProcessMonitor alloc] initWithRefreshFrequency: PMDefaultRefreshFrequency];
     });
     
     return s_defaultMonitor;
@@ -82,7 +78,7 @@ static const NSTimeInterval kDefaultRefreshFrequency = 5.0;
 
 - (NSArray<PMProcess *> *)allProcesses
 {
-    // If process list has not been requested yet
+    // If process list has not been updated yet
     if (!self.processes.count)
     {
         [self updateProcessList];
@@ -98,7 +94,7 @@ static const NSTimeInterval kDefaultRefreshFrequency = 5.0;
     NSMutableArray<PMProcess *> *const processes = [NSMutableArray array];
     for (NSNumber *const pidNumber in [processUtil collectPidsForUser: self.userId])
     {
-        PMProcess *process = [PMProcess processWithPid: pidNumber.intValue processUtil: processUtil];
+        PMProcess *const process = [PMProcess processWithPid: pidNumber.intValue processUtil: processUtil];
         if (process)
         {
             [processes addObject: process];

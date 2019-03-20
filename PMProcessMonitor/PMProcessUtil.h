@@ -6,9 +6,11 @@
 //  Copyright © 2019 Alk. All rights reserved.
 //
 
-#import "PMProcessMonitor.h"
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
+
+extern const uid_t PMAllProcesses;
 
 @interface PMProcessUtil : NSObject
 

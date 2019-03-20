@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		493EC1752231153B0013928C /* PMProcessMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 493EC1742231153B0013928C /* PMProcessMonitor.h */; };
+		493EC1752231153B0013928C /* PMProcessMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 493EC1742231153B0013928C /* PMProcessMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		493EC1772231153B0013928C /* PMProcessMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 493EC1762231153B0013928C /* PMProcessMonitor.m */; };
-		493EC18322311CEA0013928C /* PMProcessUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 493EC18122311CEA0013928C /* PMProcessUtil.h */; };
+		493EC18322311CEA0013928C /* PMProcessUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 493EC18122311CEA0013928C /* PMProcessUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		493EC18422311CEA0013928C /* PMProcessUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 493EC18222311CEA0013928C /* PMProcessUtil.m */; };
 /* End PBXBuildFile section */
 

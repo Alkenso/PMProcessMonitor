@@ -10,6 +10,8 @@
 
 #include <libproc.h>
 
+const uid_t PMAllProcesses = UID_MAX;
+
 @implementation PMProcessUtil
 
 + (instancetype)shared
