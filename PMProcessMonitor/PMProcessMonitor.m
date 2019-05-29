@@ -150,6 +150,7 @@
     }
     
     PMProcess *const process = [[PMProcess alloc] init];
+    process.pid = pid;
     process.uid = uid.intValue;
     process.name = name;
     process.location = location;
