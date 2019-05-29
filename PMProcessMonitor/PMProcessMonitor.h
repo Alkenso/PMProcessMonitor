@@ -43,6 +43,9 @@ static const NSTimeInterval PMDefaultRefreshFrequency = 5.0;
 
 - (instancetype)init NS_UNAVAILABLE;
 
+/// Returns filtered list of processes matching predicate.
+- (NSArray<PMProcess *> *)filteredProcessesWithBlock:(BOOL(^)(PMProcess *const))filter;
+
 @end
 
 NS_ASSUME_NONNULL_END

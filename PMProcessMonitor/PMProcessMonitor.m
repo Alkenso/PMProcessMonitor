@@ -87,6 +87,20 @@
     return self.processes;
 }
 
+- (NSArray<PMProcess *> *)filteredProcessesWithBlock:(BOOL(^)(PMProcess *const))filter
+{
+	NSMutableArray<PMProcess *> *const filteredProcesses = [NSMutableArray array];
+	for (PMProcess *const process in self.allProcesses)
+	{
+		if (filter(process))
+		{
+			[filteredProcesses addObject: process];
+		}
+	}
+	
+	return filteredProcesses;
+}
+
 - (void)updateProcessList
 {
     PMProcessUtil *const processUtil = PMProcessUtil.shared;
@@ -105,6 +119,8 @@
 }
 
 @end
+
+
 
 @implementation PMProcess
 
